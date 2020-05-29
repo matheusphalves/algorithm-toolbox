@@ -12,7 +12,7 @@ def lastDigitSum(n):
         # n is the index than i need to know
         #the, i must calculate result = n - sizeList-1
         for i in range(n -(sizeList-1)): #I don't calculate all 'n' terms. I need to know how many terms (index) must be increased.
-            listFib.append(listFib[-1] + listFib[-2]) #actual term is sum of previous two terms in the sequence
+            listFib.append((listFib[-1] + listFib[-2])%10) #actual term is sum of previous two terms in the sequence
     sum = reduce((lambda x,y: x+y), listFib)
     return str(sum)[-1] #last index of list
 

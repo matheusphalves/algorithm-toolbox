@@ -11,7 +11,7 @@ def fibList(n):
         # n is the index than i need to know
         #the, i must calculate result = n - sizeList-1
         for i in range(n -(sizeList-1)): #I don't calculate all 'n' terms. I need to know how many terms (index) must be increased.
-            listFib.append(listFib[-1] + listFib[-2]) #actual term is sum of previous two terms in the sequence
+            listFib.append((listFib[-1] + listFib[-2])) #actual term is sum of previous two terms in the sequence
     return listFib[-1] #last index of list
 
 
@@ -34,11 +34,7 @@ def fibNumberAgain(n, m):
         fib = multiple
     else:
         fib = n;
-    #print(f'period:{period} multiple:{multiple} fib:{fib}')
     return fibList(fib)%m;
-
-
 
 numbers = input("").split()
 print(fibNumberAgain(int(numbers[0]), int(numbers[1])))
-#print(fibList(48)%239)
