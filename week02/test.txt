@@ -1,8 +1,16 @@
-1  - OK
-2 - testar
+1 - OK
+2 - OK
 3 - OK 
 4 - OK
-5 - testar
-6 - testar
-7 - ...
-8 - ...
+5 - OK
+6 - testar (OK, pisano)
+7 - ... (OK, pisano)
+8 - testar (OK, pisano)
+
+
+problem 5
+
+    if(multiple!=0):
+        fib = multiple
+    else:
+        fib = n;

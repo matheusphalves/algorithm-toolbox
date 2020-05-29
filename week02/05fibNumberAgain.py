@@ -1,6 +1,5 @@
-listFib = []; #list with fib results
-listFib.append(0)  # n=0
-listFib.append(1)  # n=1
+listFib = [0,1]; #list with fib results
+
 
 def fibList(n):
     sizeList = len(listFib) #
@@ -29,12 +28,10 @@ def pisanoPeriod(m): #returns the periodic every fib(n) on mod(m)
     return counter-1;
 
 def fibNumberAgain(n, m):
+    if(n<m): #if n< m, fib(n) is the answer
+        return fibList(n)%m
     multiple = int(n%pisanoPeriod(m))
-    if(multiple!=0):
-        fib = multiple
-    else:
-        fib = n;
-    return fibList(fib)%m;
+    return fibList(multiple)%m;
 
 numbers = input("").split()
 print(fibNumberAgain(int(numbers[0]), int(numbers[1])))
