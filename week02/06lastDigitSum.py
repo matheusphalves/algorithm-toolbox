@@ -24,6 +24,8 @@ def sumFib(n):
     sum = reduce((lambda x, y: x + y), filterList)
     return sum%10 #last digit of sum
 
+
+
 number = int(input(""))
 print(sumFib(number))
 

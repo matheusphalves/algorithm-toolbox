@@ -1,4 +1,5 @@
 from functools import reduce
+
 listFib = [0,1]; #list with fib results
 
 def fib(n):
@@ -12,20 +13,23 @@ def fib(n):
 
 
 def sumFibRange(n, m):
-    if n%60>m%60:#the last digits of fib sequences are periodic. For pi(10) = 60 length. Then, after 60th, the last digits will be repeat!
-        big = n%60
-        short = m%60
-        fib(n%60)
-    else:
+    sum = 0
+
+    if n%60<m%60:
+        shorter = n%60;
         big = m%60
-        short = n%60 + 1
-        fib(m%60)
-    sum =0
-    print(short, big)
-    for i in range(short, big +1):
+        fib(m % 60)
+    else:
+        shorter = m%60;
+        big = n%60
+        fib(n%60)
+    for i in range(shorter, big+1):
         sum += listFib[i]
+
     return sum%10 #last digit of sum
 
+
+#5618252 6583591534156
 
 number = input("").split()
 print(sumFibRange(int(number[0]), int(number[1])))
