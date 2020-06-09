@@ -1,29 +1,31 @@
 
 
 def maxPrizeSequence(number):
-    list = [1]
+    list = [0]
     sum = 0;
-    step = 1;
-    while(sum<number):
+    while(sum<=number):
+        step = 1
         actualValue = list[-1] + step
         actualSum = sum + actualValue
-        
-        if(actualSum <number):#proximo elemento
-            nextValue =  actualValue + 1 # next
-            if(actualSum + actualValue + nextValue>number):
-                step = number - actualValue
-                list.append(list[-1] + step)
-                break #último valor adicionado
-         
+        if(actualSum<=number):
             list.append(actualValue)
             sum += list[-1]
-            step = 1
-            print("sum ", sum)
-        else:
-            list.append(actualValue)#último valor adicionado na lista!
-            
+            if(sum==number):
+                break
+            if (actualSum + (actualValue + 1) > number):
+                step = 0
+                while(actualSum + step <number):
+                    step +=1
+                list[-1] = (actualValue + step)
+                sum += list[-1]
+    list.remove(0)
     return list
 
 
 number = input("")
-print(maxPrizeSequence(int(number)))
+list = maxPrizeSequence(int(number))
+print(len(list))
+string = ""
+for x in list:
+    string += str(x) + " "
+print(string)
