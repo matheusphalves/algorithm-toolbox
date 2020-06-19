@@ -21,8 +21,9 @@ def maxValue(number, weight):
 def getValues():
     while(len(setItems)<int(data[0])):
         values = input("").split()
-        setItems.append((int(values[0]), int(values[1]), float(values[0])/float(values[1])))
+        setItems.append((int(values[0]), float(values[1]), float(values[0])/float(values[1])))
     setItems.sort(key=lambda x:x[2])
 #CODE EXECUTION
 getValues()
-print(maxValue(int(data[0]), int(data[1])))
+value = maxValue(int(data[0]), float(data[1]))
+print("{:.4f}".format(round(value, 4)))
