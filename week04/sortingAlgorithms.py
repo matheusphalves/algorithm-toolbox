@@ -6,7 +6,6 @@
 #selection sort
 def selectionSort(arrayList):
     size = len(arrayList)
-
     if(size>1):
         for i in range(1, size):
             minIndex = i
